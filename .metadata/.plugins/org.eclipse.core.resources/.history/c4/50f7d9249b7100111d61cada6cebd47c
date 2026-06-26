@@ -1,0 +1,10 @@
+package Exercicio1_Usuario;
+
+public class TestaUsuarios {
+
+	public static void main(String[] args) {
+		Usuario usuario = new Usuario("a","bece");
+		usuario.visualizar();
+	}
+
+}
