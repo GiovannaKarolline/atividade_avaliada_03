@@ -1,0 +1,17 @@
+package Exercicio1_Usuario;
+
+public class TestaUsuarios {
+
+	public static void main(String[] args) {
+		Usuario usuario = new Usuario("a","bece");
+		
+		try {
+			Administrador adm = new Administrador("ao","ai",2);
+		}catch(IllegalArgumentException excessao) {
+			System.out.println("Erro: " + excessao.getMessage());
+		}
+		
+		usuario.visualizar();
+	}
+
+}

@@ -3,7 +3,7 @@ package Exercicio1_Usuario;
 public class Administrador extends Usuario{
 	int nivelDeAcesso;
 
-	public Administrador(String nome, String email, int nivelDeAcesso) {
+	public Administrador(String nome, String email, int nivelDeAcesso) throws Validacao {
 		super(nome, email);
 		this.nivelDeAcesso = nivelDeAcesso;
 	}

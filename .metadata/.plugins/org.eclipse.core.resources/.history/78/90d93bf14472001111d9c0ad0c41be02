@@ -1,0 +1,33 @@
+package Exercicio1_Usuario;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class TestaUsuarios {
+
+	public static void main(String[] args) throws Validacao {
+		List<Usuario> usuarios = new ArrayList<Usuario>();
+		
+		criarUsuarios(usuarios);
+		
+		try {
+			Administrador adm = new Administrador("ao","ai",2);
+		}catch(IllegalArgumentException excessao) {
+			System.out.println("Erro: " + excessao.getMessage());
+		}
+		
+		for(Usuario usuario : usuarios) {
+			usuario.visualizar();
+		}
+	}
+	
+	public static void criarUsuarios(List<Usuario> listaUsuarios) throws Validacao{
+		Usuario usuario = new Usuario("Amara","amaraSelles@gmail.com");
+		Usuario usuario2 = new Usuario("Carolina","lima.carol@gmail.com");
+		Administrador adm = new Administrador("Leandro","le.andro@gmail.com", 1);
+		listaUsuarios.add(usuario);
+		listaUsuarios.add(usuario2);
+		listaUsuarios.add(adm);
+	}
+
+}
