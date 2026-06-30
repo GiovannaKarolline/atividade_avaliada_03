@@ -1,16 +1,15 @@
 package exercicio3_notificacoes;
 
 public class NotificacaoEmail extends Notificacao{
-	String email;
 	
-	public NotificacaoEmail(String destinatario, String email) {
-		super(destinatario);
-		this.email = email;
+	public NotificacaoEmail(String destinatario) throws Validacao {
+		super(destinatario, 1);
 	}
 
 	@Override
-	public void enviar(String mensagem) {
-		System.out.printf("\nEnviando Email para %s - Mensagem:\n%s", this.destinatario, mensagem);
+	public void enviar(String mensagem) throws Validacao {
+		Validacao.validarMensagem(mensagem);
+		System.out.printf("\nEnviando Email para %s - Mensagem: %s", this.destinatario, mensagem);
 	}
 	
 	@Override
@@ -20,7 +19,7 @@ public class NotificacaoEmail extends Notificacao{
 	}
 
 	@Override
-	public void setDestinatario(String destinatario) {
+	public void setDestinatario(String destinatario) throws Validacao {
 		// TODO Auto-generated method stub
 		super.setDestinatario(destinatario);
 	}

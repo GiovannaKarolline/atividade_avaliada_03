@@ -21,13 +21,14 @@ public class Carro {
 		return velocidade;
 	}
 
-	public void setVelocidade(int velocidade) {
+	public void setVelocidade(int velocidade) throws Validacao {
+		Validacao.validarVelocidade(velocidade);
 		this.velocidade = velocidade;
 	}
 	
 	public void visualizar() {
-		System.out.printf("\nModelo: ", this.modelo);
-		System.out.printf("\nVelocidade atual: ", this.velocidade);
+		System.out.printf("\n\nModelo: %s", this.modelo);
+		System.out.printf("\nVelocidade atual: %d km/h", this.velocidade);
 	}
 	
 	public void acelerar(int valor) throws Validacao{

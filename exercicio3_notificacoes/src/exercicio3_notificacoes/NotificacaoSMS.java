@@ -2,12 +2,14 @@ package exercicio3_notificacoes;
 
 public class NotificacaoSMS extends Notificacao{
 	
-	public NotificacaoSMS(String destinatario) {
-		super(destinatario);
+	public NotificacaoSMS(String destinatario) throws Validacao {
+		super(destinatario, 2);
+		Validacao.validarDestinatario(destinatario, 2);
 	}
 	
 	@Override
-	public void enviar(String mensagem) {
+	public void enviar(String mensagem) throws Validacao {
+		Validacao.validarMensagem(mensagem);
 		String destinatario = this.destinatario.replaceFirst("(\\d{2})(\\d{5})(\\d{4})", "($1) $2-$3");
 		System.out.printf("\nEnviando SMS para %s - Mensagem: %s", destinatario, mensagem);
 	}
@@ -19,7 +21,7 @@ public class NotificacaoSMS extends Notificacao{
 	}
 
 	@Override
-	public void setDestinatario(String destinatario) {
+	public void setDestinatario(String destinatario) throws Validacao {
 		// TODO Auto-generated method stub
 		super.setDestinatario(destinatario);
 	}

@@ -22,13 +22,15 @@ public class CarroEletrico extends Carro{
 	@Override
 	public void visualizar() {
 		super.visualizar();
-		System.out.printf("\nBateria restante: ", this.nivelBateria);
+		System.out.printf("\nBateria restante: %d%%", this.nivelBateria);
 	}
 	
 	@Override
 	public void acelerar(int valor) throws Validacao {
-		Validacao.validarSuficienciaBateria(this.nivelBateria, (valor/CONSUMO_POR_ACELERACAO));
+		super.acelerar(valor);
 		Validacao.validarAceleracao(valor);
+		Validacao.validarSuficienciaBateria(this.nivelBateria, (valor/CONSUMO_POR_ACELERACAO));
+		
 		this.nivelBateria -= valor/CONSUMO_POR_ACELERACAO;
 	}
 
@@ -51,7 +53,7 @@ public class CarroEletrico extends Carro{
 	}
 
 	@Override
-	public void setVelocidade(int velocidade) {
+	public void setVelocidade(int velocidade) throws Validacao {
 		// TODO Auto-generated method stub
 		super.setVelocidade(velocidade);
 	}

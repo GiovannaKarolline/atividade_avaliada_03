@@ -30,6 +30,12 @@ public class Validacao extends Exception{
 			throw new Validacao("\nNível de bateria insuficiente. O consumo é maior que o nível de bateria disponível.");
 		}
 	}
+	
+	public static void validarVelocidade(int velocidade) throws Validacao{
+		if(velocidade < 0 || velocidade > 100) {
+			throw new Validacao("\nValor de velocidade inválido. Ele é medido de 0 a 100.");
+		}
+	}
 
 	@Override
 	public String getMessage() {

@@ -14,8 +14,11 @@ public class TestaUsuarios {
 			usuario.visualizar();
 		}
 		
+		usuarios.clear();
+		
 		criarUsuariosInvalidos(usuarios);
 		
+		//não mostrará nada pois usuários inválidos não são adicionados à lista:
 		for(Usuario usuario : usuarios) {
 			usuario.visualizar();
 		}
