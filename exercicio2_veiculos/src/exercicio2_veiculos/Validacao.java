@@ -1,8 +1,7 @@
-package Exercicio1_Usuario;
+package exercicio2_veiculos;
 
 import java.io.PrintStream;
 import java.io.PrintWriter;
-import java.util.Optional;
 
 public class Validacao extends Exception{
 
@@ -14,16 +13,21 @@ public class Validacao extends Exception{
 		super(mensagem);
 	}
 	
-	public static void validarEmail(String email) throws Validacao{
-		if(!email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")) {
-			throw new Validacao("\nEmail inválido.");
+	public static void validarAceleracao(int aceleracao) throws Validacao{
+		if(aceleracao < 1 || aceleracao > 100) {
+			throw new Validacao("\nValor de aceleração inválido. Ela é medida de 1 a 100.");
 		}
 	}
 	
-	public static void validarNome(String nome) throws Validacao{
-		Optional<String> nomeOptional = Optional.ofNullable(nome);
-		if(nomeOptional.isEmpty() || nomeOptional.get().equals("")) {
-			throw new Validacao("\nNome precisa ser preenchido.");
+	public static void validarNivelBateria(int nivelBateria) throws Validacao{
+		if(nivelBateria < 0 || nivelBateria > 100) {
+			throw new Validacao("\nNível de bateria inválido. Ele é medido de 0 a 100.");
+		}
+	}
+	
+	public static void validarSuficienciaBateria(int nivelBateria, int consumo) throws Validacao {
+		if(nivelBateria < consumo) {
+			throw new Validacao("\nNível de bateria insuficiente. O consumo é maior que o nível de bateria disponível.");
 		}
 	}
 

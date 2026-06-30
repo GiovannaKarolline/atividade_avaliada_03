@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-        <listEntry value="/Exercicio1_Usuario/src/Exercicio1_Usuario/TestaUsuarios.java"/>
+        <listEntry value="/exercicio1_usuario/src/exercicio1_usuario/TestaUsuarios.java"/>
     </listAttribute>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
         <listEntry value="1"/>
     </listAttribute>
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE" value="true"/>
-    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="Exercicio1_Usuario.TestaUsuarios"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="exercicio1_usuario.TestaUsuarios"/>
     <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="Exercicio1_Usuario"/>
-    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Exercicio1_Usuario"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="exercicio1_usuario"/>
 </launchConfiguration>
